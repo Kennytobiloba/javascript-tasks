@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  given an array of names write a function that use the length property to check if the array is empyty or not
+       
+
+    //    function value(color){
+    //     if(color.length > 5){
+    //         return true
+    //     }
+    //     else{
+    //         false
+    //     }
+    //    }
+    //    const coloResult = value("navyblue","blue","red","pink","yellow")
+    //    console.log(coloResult)
+
+    // function value(names){
+    //         if(names.length > 0){
+    //             return false
+    //         }
+    //         else{
+    //             return true
+    //         }
+    //     }
+    //     const result = value("taiwo","kenny","ayo","tolu")
+    //     console.log(result)
+
+    // write a javascript function that takes an array of numbers and uses the length property to determine the number of elements in the array return this count
+    function num(number){
+        return number.length
+    }
+    const numbers = [1,2,3,4,5,6,7]
+    const numResult = num(numbers)
+    console.log(numResult)
+       
+
+    // write a function that takes an array of product object and uses the length property to determine the total number of  products in the array
+    function object(value){
+        return value.length
+    }
+    const objectValue =  [
+        {
+            id:1,
+            name:"kenny",
+            age:25
+        },
+        {
+            id:2,
+            name:"taiwo",
+            age:25
+        },
+        {
+            id:3,
+            name:"kenny",
+            age:25
+        },
+    ]
+    const resultobject = object(objectValue)
+    console.log(resultobject)
+    </script>
+</body>
+</html>
