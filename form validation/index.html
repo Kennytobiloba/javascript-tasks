@@ -2,39 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>sign up page</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
-    <form action="" onsubmit="signup(event)">
-        <h1>Sign up</h1>
-        <div class="input">
-            <label for="FullName"></label>
-            <input type="text" placeholder="FullName" required name="FullName">
-        </div>
-        <div class="input">
-            <label for="Username"></label>
-            <input type="text" placeholder="Username" required name="Username" id="Username">
-        </div>
-        <div class="input">
-            <label for="Email"></label>
-            <input type="text" placeholder="Email" required name="Email">
-        </div>
-        <div class="input">
-            <label for="password"></label>
-            <input type="password" placeholder="Password" required name="password" id="password">
-            <div id="message"></div>
-        </div>
-    <button type="submit" class="btn">Sign up</button>
-    <p> Already have an account?
-    <a href="#">Login</a>
-    </p>
-    </form>
-</div>
+    <div>
+        <h1>SigUp Here</h1>
+        <form action="" onsubmit="login(event)">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
 
+            </div>
+            <div >
+                <label for="firstName">First Name</label>
+                <input required type="text" name="firstName" id="firstName">
+              </div>
+
+              <div >
+                <label for="secondName">Second Name</label>
+                <input type="text" name="secondName" id="secondName">
+              </div>
+              <div >
+                <label for="lastName">Last Name</label>
+                <input required type="text" name="lastName" id="lastName">
+              </div>
+              <div >
+                <label for="password">Password</label>
+                <input required type="password" name="password" id="password">
+              </div>
+              <div id="error" class="center" style="display: none; color: red;">
+                User already exists
+            </div>
+            <div id="success" class="center" style="display: none;">
+              Signup was successful, please click on login link below to login
+            </div>
+            <div class="center">
+              <button> Signup </button>
+            </div>
+            <div class="center">Already have an account? 
+              <a href="login.html"> login here</a>
+            </div>
+            
+          </form>
+        
+        
+
+         <script src="index.js"></script> 
+
+    </div>
 </body>
-<script src="index.js"></script>
 </html>

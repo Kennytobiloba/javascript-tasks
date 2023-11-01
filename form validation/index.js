@@ -1,77 +1,91 @@
-function signup(event) {
-    event.preventDefault();
-    const target = event.target;
-    const form = new FormData(target);
-    const FullName = form.get("FullName")?.trim()
-    const Username = form.get("Username")?.trim()
-    const Email = form.get("Email")?.trim()
-    const password = form.get("password")?.trim()
+function login(event){
+  event.preventDefault()
+  error.style.display = "none";
+  error.innerHTML = "User already exists";
+  success.style.display = "none";
+  const target = event.target;
+  const form = new FormData(target)
+  const email = form.get("email")?.trim()
+  const firstName = form.get("firstName")?.trim()
+  const secondName = form.get("secondName")?.trim()
+  const lastName = form.get("lastName")?.trim()
+  const password = form.get("password")?.trim()
 
-    localStorage.setItem("Username", Username);
-    localStorage.setItem("password", password);
-    localStorage.setItem("Email", Email);
-    localStorage.setItem("FullName", FullName);
-
-    if (!Username || !password  || !Email || !FullName) {
-        document.getElementById("message").innerHTML = "Error: Please fill in all fields.";
-        document.getElementById("message").style.color = "red";
-    } else {
-        
-        document.getElementById("message").innerHTML = "Registration successful!";
-        document.getElementById("message").style.color = "green";
-        window.location.href = "login.html";
-    }
-
-    return false; // Prevent the form from submitting
+  if(!email || !firstName || !secondName || !lastName || !password){
+    error.innerHTML = "fil the required ";
+    error.style.display = "block";
+    return
+  }
+  const saveUsers = localStorage.users;
+  let allUsers = []
+  if(saveUsers){
+    allUsers = JSON.parse(saveUsers)
+  }
+  const emailExist = allUsers.findIndex((user)=> user.email == email)
+  if(emailExist > -1){
+    error.style.display = "block";
+    return
+  }
+  data = {
+    firstName,
+    secondName,
+    lastName,
+    email,
+    password
+  }
+  allUsers.push(data)
+  console.log(allUsers);
+  localStorage.users = JSON.stringify(allUsers);
+  success.style.display = "block";
 }
+function sigup(event){
+  event.preventDefault();
 
-window.onload = function() {
-    const savedUsername = localStorage.getItem("Username");
-    const savedPassword = localStorage.getItem("password");
+  error.style.display = "none"
+  success.style.display = "none"
+  const target = event.target
+  const form = new FormData(target)
+  const email = form.get("email")?.trim()
+  const password = form.get("password")?.trim()
 
-    if (savedUsername && savedPassword) {
-        document.getElementById("Username").value = savedUsername; // Use "Username" here
-        document.getElementById("password").value = savedPassword; // Use "password" here
-    }
-};
-    
+  const savedUsers = localStorage.users
+   let allUsers = []
+  if(savedUsers){
+    allUsers = JSON.parse(savedUsers)
+  }
+  const user = allUsers.find((user)=>{
+    return user.email == email && user.password == password;
+  })
 
-function login(event) {
-    event.preventDefault();
-    const form = event.target;
-    const Username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+  if(!user){
+    error.style.display = "block";
+    return
+  }
 
-    const savedUsername = localStorage.getItem("Username");
-    const savedPassword = localStorage.getItem("password");
 
-    const message = document.getElementById("message");
+  localStorage.currentUser = JSON.stringify(user);
 
-    if (!Username || !password) {
-        message.innerHTML = "Error: Please fill in all fields.";
-        message.style.color = "red";
-    } else if (Username !== savedUsername || password !== savedPassword) {
-        message.innerHTML = "Error: Invalid credentials.";
-        message.style.color = "red";
-    } else {
-        form.reset();
-        message.innerHTML = "Login successful!";
-        message.style.color = "green";
-        window.location.href = "Dashboard.html";
-    }
+  success.style.display = "block";
 }
+function dashboard(){
+  
+  const savedUsers = localStorage.currentUser;
+  if(!savedUsers){
+    alert("No user is found, going back to login")
+    setTimeout(()=>{
+      login.href = "./login.html";
+     }, 5000)
+     return
+  }
+  const user = JSON.parse(savedUsers);
+  const detailsContainer = document.getElementById("detailsContainer");
+  const userNameElement = document.createElement("p");
+  userNameElement.textContent = "Welcome, " + user.firstName;
 
+ 
+  
+  
+  detailsContainer.appendChild(userNameElement);
 
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    
-    const userEmail = localStorage.getItem("Username");
-
-    
-    const userEmailElement = document.getElementById("UserName");
-    if (userEmailElement) {
-        userEmailElement.textContent = userEmail;
-    }
-});
+  
+}

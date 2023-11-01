@@ -1,64 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
+/* Apply some basic styling to the entire page */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  background-color: #f2f2f2;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-      min-height: 100vh;
-    background:  linear-gradient(90deg, #FB37FF, #18B2DE);
-    
-}
-
-.wrapper {
-  width: 420px;
-  background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 02);
-  border-radius: 10px;
-  padding: 30px 40px;
-  color: #fff;
-}
-
-input {
-  margin: 5px;
-  width: 100%;
-  height: 50px;
-  background: none;
-  outline: none;
-  border: 2px solid;
-  border-radius: 40px;
-  padding: 20px 45px 20px 20px;
-  font-size: 16px;
-  color: #fff;
-}
-
-.btn{
-  margin-top: 5px;
-  width: 100%;
-  height: 50px;
+/* Style the container div */
+div {
   background-color: #fff;
-  outline: none;
-  border : solid #fff;
-  border-radius: 40px ;
-  font-size: 16px;
-  color: #000;
-  
-}
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-p {
+/* Center the container div */
+.center {
   text-align: center;
+}
+
+/* Style the header */
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Style labels and input fields */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the error message */
+#error {
+  color: red;
   margin-top: 10px;
 }
-::placeholder {
-  color: #fff
+
+/* Style the success message */
+#success {
+  color: green;
+  margin-top: 10px;
+}
+
+/* Style the signup button */
+button {
+  background-color: #0074d9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

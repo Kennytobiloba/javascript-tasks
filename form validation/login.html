@@ -1,55 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f2f2f2;
+      }
+
+      form {
+         max-width: 300px;
+         margin: 0 auto;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+         display: block;
+         margin-bottom: 10px;
+      }
+
+      input {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 20px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+
+      #error, #success {
+         text-align: center;
+         margin-bottom: 10px;
+      }
+
+      #error {
+         color: red;
+         display: none;
+      }
+
+      #success {
+         color: green;
+         display: none;
+      }
+
+      .center {
+         text-align: center;
+      }
+
+      button {
+         background-color: #007BFF;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+      }
+
+      button:hover {
+         background-color: #0056b3;
+      }
+   </style>
 </head>
 <body>
-   
-    
-   <form  onsubmit="login(event)">
-    <div class="wrapper">
+   <form action="" onsubmit="sigup(event)">
+      <div>
+         <label for="email">Email</label>
+         <input required type="email" name="email" id="email">
+       </div>
 
-        <div class="heading">
-        <h2>Welcome!</h2>
-        <p>Sign In to your account</p>
-        </div>
-        
-        <div class="input-group">
-            <label for="Username"></label>
-         <input type="text" id="username" class="input-field" placeholder="Username" >
-        </div>
-        
-        <div class="input-group">
-            <label for="password"></label>
-         <input type="password" id="password" class="input-field" placeholder="Password"  name="password" >
-        </div>
-        
-        <div class="input-group row">
-        
-         <div class="row">
-         <input type="checkbox" id="remember" hidden>
-         <label for="remember" class="custom-checkbox"></label>
-         <label for="remember">Remember me?</label>
-         </div>
-         
-         <div class="row">
-            <a href="#" target="_blank">Forgot password?</a> 
-         </div>
-        </div>
-        
-        
-        <div class="input-group">
-        <button>Login <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-        <div class="message" id="message"></div>
-        </div>
-        
-       
+       <div>
+         <label for="password">Password</label>
+         <input required type="password" name="password" id="password">
+       </div>
+
+       <div id="error" class="center" style="display: none; color: red;">
+         Account not found, please click on signup below.
+       </div>
+       <!-- Success -->
+       <div id="success" class="center" style="display: none;">
+         Login successful! Goto 
+         <a href="Dashbord.html"> dashboard</a>
+     </div>
+     <div class="center">
+      <button> Login </button>
+    </div>
    </form>
-        
+
+   <script src="index.js">
+
+   </script>
 </body>
-<script src="index.js"></script>
 </html>
