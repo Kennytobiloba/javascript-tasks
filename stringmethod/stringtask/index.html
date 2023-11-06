@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Write a function that takes a string and an index as parameters and returns the character at that index. Implement error handling if the index is out of bounds.
+        function getCharacterAtIndex(inputString, index) {
+            try {
+                index = Number(index); // Convert the index to a number
+                if (index >= 0 && index < inputString.length) {
+                    return inputString.charAt(index);
+                } else {
+                    throw new Error("Index is out of bounds");
+                }
+            } catch (error) {
+                return error.message;
+            }
+        }
+
+        const inputString = "hello, world!";
+        const index = 7; 
+        const result = getCharacterAtIndex(inputString, index);
+        console.log(result);
+
+         function stringJoin(string1, string2){
+            return string1.concat(string2);
+         }
+         const result2 = stringJoin("kenny","taiwo")
+         console.log(result2)
+   //  create a function that extracts a portion of a string between two specified indices using the slice method
+             function str(input, index) {
+            return input.slice(5, index);
+            }
+
+            const res = str("i love coding", 8); 
+            console.log(res); 
+
+// create a function that checks if a string contain only uppercase letters using the charcodeAT() method
+function text(upperValue){
+     const charCode = upperValue.charCodeAt()
+     if(charCode < 65 || charCode > 90){
+        return false
+     }
+     else{
+        return true
+     }
+}
+const newResult = text("HELLO")
+const newResult1 =text("hello")
+console.log(newResult)
+console.log(newResult1)
+
+// write a function that takes a string and an index as parameters and returns the character at that index  using the chaAt() method.if the string handle caases where the index is out of bounds 
+
+
+function bound(string,index){
+
+    const char = string.charAt(index)
+    return char
+    if(index < 0 && index <= string.length){
+        return "out of bounds"
+    }
+
+
+}
+const resultNew = bound("tobiloba", 5)
+console.log(resultNew)
+
+// write a function that removes leading and trailing whitespace from a string
+function input(inputvalue){
+    return inputvalue.trim()
+}
+const trimResult =  input("     kenny works hard God pls crown her effort she deserve the best")
+console.log(trimResult)
+
+// implement a function that removes a trailing white space from a string using the trimEnd()
+function input(inputvalue){
+    return inputvalue.trimEnd()
+}
+const trimResult2 =  input("kenny works hard God pls crown her effort she deserve the best.      ")
+console.log(trimResult2)
+
+// implement a function that converts all characters  in a sting to lowercase
+function lower(value){
+    return value.toLowerCase();
+}
+ const result5 = lower("HELLO")
+ console.log(result5)
+
+//  You can create a function that checks if a string ends with a specified substring in JavaScript using the endsWith() method. Here's how you can do it:
+
+function endwith(value, index){
+    return value.endsWith(index)
+}
+const resultwith = endwith("loving" ,"ing") 
+console.log(resultwith)
+
+
+// create a function that checks if a file name has a valid file extension
+function file(value){
+    const validFile = /\.(jpg|jpeg|png|gif|pdf|doc|docx|txt)$/i ;
+    return validFile.test(value)
+}
+const fileResult = file("picture.png")
+console.log(fileResult)
+
+// write a function that checks if two strings are equal (case-insensitive)
+
+function equal(value1, value2){
+    return value1.toLowerCase() === value2.toLowerCase()
+}
+const value1Result = equal("hello","HELLO");
+const value2Result = equal("food","Welcome")
+console.log(value1Result)
+console.log(value2Result)
+
+
+// implement a function that checks if a given string starts with a specified substring
+
+
+function starwith(value,index){
+    return value.startsWith(index)
+}
+const startResult = starwith("welcome", "we")
+console.log(startResult)
+
+
+
+
+// write a function that repeats a given string a specified number of time
+function value(input, times){
+    return input.repeat(times)
+}
+const repeatResult = value("kenny, ", 3)
+console.log(repeatResult)
+
+// write a function that replace all occurrences of a specified substring with another string
+function value(input, search,replace){
+    const regex = new RegExp(search, "g")
+    return input.replace(regex, replace)
+}
+const resultReplace = value( "i love code but is somehow stressful", "code" ,"coding")
+console.log(resultReplace)
+
+// implement a fuction that checks if a string has a length that checks if a string has a length that  is a multiple of 5 using the length property return true if it is  and false 
+
+
+const resultLength = value("hellooo")
+console.log(resultLength)
+
+
+
+
+
+
+
+// write a function that validates whether a url begins with "http;//" or "https//"
+
+
+function value(url){
+    return url.startsWith("http://") || url.startsWith("https://")
+}
+const urlResult1 = value("http:// facebok.com")
+const urlResult2 = value("https:// goggle.com")
+console.log(urlResult1)
+console.log(urlResult2)
+    </script>
+</body>
+</html>
