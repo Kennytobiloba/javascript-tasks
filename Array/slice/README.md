@@ -1,16 +1,15 @@
+1. Write a JavaScript function that takes an array of numbers and uses the slice() method to create a new array containing only the elements from index 2 to index 4 (inclusive).
 
-Question: Write a JavaScript function that takes an array of numbers and uses the splice() method to remove the element at index 2 from the array.
+2. Given an array of fruits, write a function that uses the slice() method to create a new array containing only the first three fruits.
 
-Question: Given an array of colors, write a function that uses the splice() method to remove the second and third elements from the array.
+3. Create an array of names. Write a function that uses the slice() method to create a new array containing only the last two names.
 
-Question: Create an array of names. Write a function that uses the splice() method to remove the last name from the list.
+4. Write a function that takes an array of product objects and uses the slice() method to create a new array containing only the products with indices 1 to 3.
 
-Question: Write a function that takes an array of product objects and uses the splice() method to remove the second product from the array.
+5. Create a function that simulates a pagination system. Given an array of items and a page number, write a function that uses the slice() method to retrieve and return the items for that page.
 
-Question: Create a function that simulates a to-do list. Given an array of tasks, write a function that uses the splice() method to remove a specific task by its index.
+6. Write a function that takes an array of sentences and uses the slice() method to create a new array containing only the sentences with lengths between 20 and 50 characters.
 
-Question: Write a function that takes an array of strings and uses the splice() method to remove the first two strings from the array.
+7. Create an array of tasks with descriptions and priorities. Write a function that uses the slice() method to create a new array containing only the high-priority tasks.
 
-Question: Create an array of student names. Write a function that uses the splice() method to replace the second and third names with "John" and "Alice."
-
-Question: Implement a function that simulates a playlist. Given an array of songs, write a function that uses the splice() method to remove a song by its index from the playlist.
+8. Implement a function that simulates a user list. Given an array of user objects, write a function that uses the slice() method to create a new array containing only a specified range of users (e.g., users 3 to 5).

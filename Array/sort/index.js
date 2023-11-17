@@ -106,6 +106,10 @@ const popResult = population(popArray)
 console.log(popResult)
 
 
+
+
+// 7. Question: Create an array of cities with objects containing names and populations. Write a function that uses the sort() method to sort the cities by population in descending order.
+
 function sortdate(dates){
     return dates.sort(function (a, b){
         const dateA = new Date(a)
