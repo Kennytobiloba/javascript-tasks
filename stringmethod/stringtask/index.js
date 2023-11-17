@@ -269,6 +269,22 @@ console.log(value1Result)
 console.log(value2Result)
 
 
+
+
+
+// (19) Create a function that converts the first letter of each word in a sentence to uppercase.
+function capital(sentence){
+  const words = sentence.split(' '); 
+  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return capitalizedWords.join(' '); 
+}
+
+const capitalize = capital("i love coding");
+console.log(capitalize);
+
+
+
+
 // 20 Implement a function that checks if a string is in all uppercase letters.
 function isUpperCase(inputString) {
     return inputString === inputString.toUpperCase();
@@ -280,15 +296,6 @@ function isUpperCase(inputString) {
   console.log(isUpperCase(exampleString2)); 
   
 
-// (19) Create a function that converts the first letter of each word in a sentence to uppercase.
-function capital(sentence){
-    const words = sentence.split(' '); 
-    const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-    return capitalizedWords.join(' '); 
-}
-
-const capitalize = capital("i love coding");
-console.log(capitalize);
 
 
 
@@ -303,7 +310,7 @@ const resultwith = endwith("loving" ,"ing")
 console.log(resultwith)
 
 
-// Create a function that checks if a file name has a valid file extension (e.g., ".jpg", ".txt").
+//(22) Create a function that checks if a file name has a valid file extension (e.g., ".jpg", ".txt").
 function isValidFileExtension(fileName) {
     const validExtensions = [".jpg", ".txt", ".pdf", ".doc"];
     const fileExtension = fileName.slice(((fileName.lastIndexOf(".") - 1) >>> 0) + 2);
@@ -433,6 +440,30 @@ function value(input, search,replace){
 const resultReplace = value( "i love code but is somehow stressful", "code" ,"coding")
 console.log(resultReplace)
 
+
+// (34) Implement a function that formats a phone number by adding dashes in the appropriate places using the replace() method.
+function formatPhoneNumber(phoneNumber) {
+  // Remove any non-digit characters from the phone number
+  const cleanedNumber = phoneNumber.replace(/\D/g, '');
+
+  // Check if the cleaned number has 10 digits (assuming a standard US phone number)
+  if (cleanedNumber.length === 10) {
+    // Format the phone number with dashes
+    return cleanedNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+  } else {
+    // Handle invalid phone numbers or numbers with different formats
+    console.error("Invalid phone number format");
+    return phoneNumber; // Return the original number if it's not 10 digits
+  }
+}
+
+// Example usage
+const phoneNumber = "1234567890";
+const formattedNumber = formatPhoneNumber(phoneNumber);
+console.log(`Original: ${phoneNumber}`);
+console.log(`Formatted: ${formattedNumber}`);
+
+
 // (35) Create a function that pads a string on the left with a specified character until it reaches a desired length.
 function padLeft(str, desiredLength, padChar) {
     if (str.length >= desiredLength) {
@@ -479,29 +510,6 @@ function formatTime(inputTime) {
 
 
 
-// (38) Create a function that generates a table of contents for a document, aligning page numbers using the padEnd() method.
-
-function generateTableOfContents(contents) {
-    let table = "Table of Contents\n";
-    contents.forEach((content, index) => {
-      const pageNumber = (index + 1).toString();
-      const entry = `${content.title} ${pageNumber.padEnd(30 - content.title.length, '.')}\n`;
-      table += entry;
-    });
-    return table;
-  }
-  
-  
-  const documentContents = [
-    { title: "Introduction" },
-    { title: "Methods and Tools" },
-    { title: "Results" },
-    { title: "Conclusion" }
-  ];
-  
-  const tableOfContents = generateTableOfContents(documentContents);
-  console.log(tableOfContents);
-  
   
   
 // 38. Create a function that generates a table of contents for a document, aligning page numbers using the padEnd() method.
@@ -635,6 +643,27 @@ if (lastIndex !== -1) {
 } else {
     console.log(`Character '${charTo}' not found in the string.`);
 }
+
+
+
+// 46. Write a function that searches for the last occurrence of a word in a text string and returns the index using the lastIndexOf() method. If the word is not found, return -1.
+
+
+function findLastOccurrence(text, word) {
+  const lastIndex = text.lastIndexOf(word);
+  return lastIndex !== -1 ? lastIndex : -1;
+}
+const text = "This is an example text. Example text can contain example words.";
+const searchWord = "example";
+const lastOccurrenceIndex = findLastOccurrence(text, searchWord);
+
+if (lastOccurrenceIndex !== -1) {
+  console.log(`Last occurrence of "${searchWord}" found at index: ${lastOccurrenceIndex}`);
+} else {
+  console.log(`"${searchWord}" not found in the text.`);
+}
+
+
 
 
 //(47) Implement a function that takes a string and an index as parameters and returns the character at that index using the charAt() method. Handle cases where the index is out of bounds.
